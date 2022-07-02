@@ -1,0 +1,19 @@
+{% load common_tags %}
+<div class="row mb-4">
+    <header class="col-xl-12"><h2 class="tm-text-shadow">{% info 3 %}</h2></header>
+</div>
+<div class="row">
+{% for review in reviews %}
+
+    <div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+        <div class="media tm-bg-transparent-black tm-border-white">
+            <div class="media-body">
+                <h3>{{ review.name }}</h3>
+                <h3>{{ review.email }}</h3>
+                <p>{{ review.message|title }}</p>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>
+

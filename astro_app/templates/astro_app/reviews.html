@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+{% load common_tags %}
+{% load i18n %}
+
+{% block title %}
+    {% info 3 %}
+{% endblock %}
+
+{% block content %}
+
+	<div class="row mb-4">
+		<div class="col-sm-12">
+			<header><h2 class="tm-text-shadow">{% trans 'Написать отзыв' %}</h2></header>
+		</div>
+	</div>
+	<div class="row tm-page-4-content">
+		<div class="col-md-6 col-sm-12 tm-contact-col">
+			<div class="contact_message">
+				<form method="post" class="contact-form">
+					{% csrf_token %}
+					{{ form }}
+					<br>
+					<button type="submit" class="btn tm-btn-submit tm-btn ml-auto">{% trans 'Отправить' %}</button>
+				</form>
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-12 tm-contact-col">
+<!--			<div class="tm-address-box">-->
+<!--				<p>Aliquam interdum, nisl sedd faucibus tempor, massa velit laoreet ipsum, et faucibus sapien magna at enim. Suspendisse a dictum tortor.</p>-->
+<!--				<p>Curabitur venenatis leo in augue convallis, vulputate sollicitudin ex maximus.</p>-->
+<!--				<address>-->
+<!--					120-240 Aliquam nec neque augue<br>-->
+<!--					Suspendisse tincidunt nunc,<br>-->
+<!--					vitae sagis justo 11000-->
+<!--				</address>-->
+<!--			</div>-->
+		</div>
+	</div>
+
+
+{% endblock %}
+
+{% block content2 %}
+	{% include 'astro_app/reviews_list.html' %}
+{% endblock %}
