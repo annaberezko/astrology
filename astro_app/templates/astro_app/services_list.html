@@ -1,0 +1,14 @@
+
+    <div class="row">
+    {% for item in service %}
+
+        <div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+            <div class="media tm-bg-transparent-black tm-border-white">
+                <div class="media-body">
+                    <h3>{{ item.name }}</h3>
+                    <p>{{ item.short_text|title }}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>

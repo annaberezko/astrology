@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% load common_tags %}
+{% block title %}
+    {% info 5 %}
+{% endblock %}
+
+{% block content %}
+    <h2>{% info 5 %}</h2>
+{% endblock %}
+
+{% block content2 %}
+    {% include 'astro_app/articles_list.html' %}
+{% endblock %}

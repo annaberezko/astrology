@@ -1,0 +1,62 @@
+{% load static %}
+{% load i18n %}
+<!-- Sidebar -->
+<div id="tmSideBar" class="col-xl-3 col-lg-4 col-md-12 col-sm-12 sidebar">
+
+    <button id="tmMainNavToggle" class="menu-icon">&#9776;</button>
+
+    <div class="inner">
+        <center>
+            <a href="/" style="margin-left:20px"><img src="{% static 'img/logo.png' %}" alt=""></a>
+            <br>
+            <br>
+
+        </center>
+        <center>
+            <a href="callto:+380673040037">
+                <h5>+38(067)304-00-37</h5>
+            </a>
+        </center>
+
+        <nav id="tmMainNav" class="tm-main-nav">
+
+            <ul>
+                {% for item in menu %}
+                <li>
+                     <a href="/{{ item.title }}/" class="scrolly {% if item.id == active_href %} active{% endif %}" data-page="#tm-section-{{ item.id }}">
+<!--                        {{ active_href }}-->
+<!--                         {% if is_home %}+{% endif %}-->
+                         <i class="fas fa-{{ item.img_name }} tm-nav-fa-icon"></i>
+                        <span>{{ item.name }}</span>
+                    </a>
+                </li>
+                {% endfor %}
+
+            </ul>
+        </nav>
+
+         <center>
+            <form action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+                <input name="next" type="hidden" value="/" />
+
+                <select class="selectpicker" name="language" onchange="this.form.submit()">
+                  {% get_current_language as LANGUAGE_CODE %}
+                  {% get_available_languages as LANGUAGES %}
+                  {% get_language_info_list for LANGUAGES as languages %}
+                  {% for language in languages %}
+
+                      <option
+                        value="{{ language.code }}"
+                        {% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}
+                        >
+                        {{ language.code }}
+                      </option>
+
+                  {% endfor %}
+                </select>
+            </form>
+        </center>
+
+    </div>
+</div>

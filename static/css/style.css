@@ -1,0 +1,14 @@
+body {
+    background: #ededed;
+    color: #555;
+}
+
+.selectpicker {
+    padding: 5px;
+    color: white;
+    background: none;
+    border: 1px solid white;
+}
+.selectpicker option {
+    color: black;
+}

@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    {{ info.name }}
+{% endblock %}
+
+{% block content %}
+{{ info.text|safe }}
+{% endblock %}

@@ -1,0 +1,18 @@
+
+    <div class="row">
+    {% for item in articles %}
+
+        <div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+            <div class="media tm-bg-transparent-black tm-border-white">
+                <div class="media-body">
+                    <h3>{{ item.name }} </h3>
+                    <p>
+                        {{ item.text|safe|truncatechars:280 }}
+                    </p>
+
+                    <a href="{{  item.get_url }}" class="btn tm-btn tm-font-big" data-nav-link="#tmNavLink2">Читать далее</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>

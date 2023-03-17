@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+{% load common_tags %}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Отзыв отправлен' %}
+{% endblock %}
+
+{% block content %}
+
+	<div class="row mb-4">
+		<div class="col-sm-12">
+			<header><h2 class="tm-text-shadow">{% trans 'Ваш отзыв отправлен' %}</h2></header>
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block content2 %}
+	{% include 'astro_app/reviews_list.html' %}
+{% endblock %}

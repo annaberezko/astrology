@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+{% load i18n %}
+{% load common_tags %}
+
+{% block title %}
+    {{ article.name }}
+{% endblock %}
+{% block keywords %}
+    {{ article.keywords }}
+{% endblock %}
+{% block description %}
+    {{ article.description }}
+{% endblock %}
+
+{% block content %}
+    <h2><a href="/articles/">{% trans 'Все статьи' %}</a> | {{ article.name }}</h2>
+    {{ article.text|safe }}
+{% endblock %}
